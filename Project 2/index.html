@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Product preview card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: hsl(30, 38%, 92%);
+      width: 100vw;
+      height: 100vh;
+    }
+
+
+    .container {
+      width: 650px;
+      height: 487.5px;
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 10px;
+      display: flex;
+
+    }
+
+    .left {
+      width: 50%;
+
+    }
+
+    .right {
+      width: 50%;
+      padding: 35px;
+    }
+
+    .image1 {
+      width: 100%;
+
+    }
+    .image2{
+      display: none;
+    }
+
+    .image1 img {
+      width: 100%;
+      border-radius: 10px 0px 0px 10px;
+    }
+
+    .right h1 {
+      font-family: 'Fraunces', serif;
+      line-height: 1;
+      padding-bottom: 25px;
+      color: hsl(212, 21%, 14%);
+
+    }
+
+    .right p {
+      font-family: 'Montserrat', sans-serif;
+      color: hsl(228, 12%, 48%);
+      font-size: 15px;
+      padding-bottom: 25px;
+    }
+
+    .price h1,
+    p {
+      display: inline-block;
+    }
+    .price h1{
+      color: hsl(158, 36%, 37%);
+    }
+
+    .price p {
+      position: relative;
+      padding: 20px;
+      top: -5px;
+      text-decoration: line-through;
+    }
+    button{
+      width: 100%;
+      padding: 12px 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: white;
+      background-color:hsl(158, 36%, 37%) ;
+      border-color: transparent;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button img{
+      padding: 0px 6px;
+      position: relative;
+      top: 2px;
+
+    }
+    button:hover{
+      background-color: hsl(159, 33%, 17%);
+
+    }
+
+    @media screen and (max-width:425px)
+    {
+      .image1{
+        display: none;
+      }
+      .image2{
+        display: block;
+      }
+      .image2 img{
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+      }
+      .container{
+        flex-direction: column;
+        width: 350px;
+        height: 600px;
+      }
+      .left{
+        width: 100%;
+      }
+      .right{
+        width: 100%;
+        padding: 27px;
+      }
+      .right p{
+        font-size: 14px;
+        padding-bottom: 13px;
+      }
+      .right h1{
+        padding-bottom: 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="left">
+      <div class="image1">
+        <img src="images/image-product-desktop.jpg" alt="">
+      </div>
+      <div class="image2">
+        <img src="images//image-product-mobile.jpg" alt="">
+      </div>
+
+    </div>
+    <div class="right">
+
+      <p>P E R F U M E</p>
+
+      <h1>Gabrielle Essence Eau De Parfum</h1>
+
+      <p>A floral, solar and voluptuous interpretation composed by Olivier Polge,
+        Perfumer-Creator for the House of CHANEL.</p>
+
+      <div class="price">
+        <h1>$149.99</h1>
+        <p>$169.99</p>
+      </div>
+
+      <button>
+        <img src="images/icon-cart.svg" alt="">
+
+        Add to Cart
+      </button>
+
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/PriyoBROTO04" target="_blank">Priyobroto</a>.
+  </div>
+</body>
+
+</html>
