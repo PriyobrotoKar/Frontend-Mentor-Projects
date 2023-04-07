@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Order summary card</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url("images/pattern-background-desktop.svg") center 15% / cover no-repeat;
+      background-color: hsl(225, 100%, 94%);
+      font-family: 'Red Hat Display', sans-serif;
+    }
+
+    .container {
+      width: 400px;
+      height: 600px;
+      background-color: hsl(225, 100%, 98%);
+      border-radius: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      overflow: hidden;
+      transform: translate(-50%, -50%);
+      box-shadow: 0px 10px 40px 0px hsl(224deg 23% 55% / 40%);
+    }
+
+    .image img {
+      width: 100%;
+
+
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .title h1 {
+      /* padding-bottom: 10px; */
+      font-size: 26px;
+      font-weight: 900;
+      color: hsl(223, 47%, 23%);
+    }
+
+    .subtitle {
+      font-size: 16px;
+      text-align: center;
+      color: hsl(224, 23%, 55%);
+      /* padding-bottom: 10px; */
+    }
+
+    .info {
+      width: 100%;
+      height: 80px;
+      background-color: hsl(234, 100%, 97%);
+      border-radius: 10px;
+      padding: 0px 20px;
+      display: grid;
+      grid-template-columns: 42px 1fr max-content;
+      gap: 20px;
+      align-items: center;
+
+    }
+
+    .logo {
+      position: relative;
+    }
+
+    .logo img {
+      width: 100%;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+    }
+
+    .plan-info {
+      font-size: 15px;
+    }
+
+    .plan {
+
+      font-weight: 800;
+      color: hsl(223, 47%, 23%);
+    }
+
+    .price {
+      color: hsl(224, 23%, 55%);
+      padding-top: 3px;
+    }
+
+    .change-plan a {
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .change-plan a:hover {
+      text-decoration: none;
+      color: hsl(246, 79%, 67%);
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px 0px;
+      background-color: hsl(245, 75%, 52%);
+      border-radius: 10px;
+      border: none;
+      font-size: 14px;
+      color: white;
+      font-weight: 700;
+      box-shadow: 0px 8px 20px 0px hsl(224deg 23% 55% / 55%);
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: hsl(246, 79%, 67%);
+    }
+
+    .cancel {
+      font-size: 14px;
+      font-weight: 900;
+      color: hsl(224, 23%, 55%);
+      cursor: pointer;
+    }
+
+    .cancel:hover {
+      color: black;
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 100%;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+    @media(max-width:425px) {
+      body{
+        background: none;
+        background-color: hsl(225, 100%, 94%);
+      }
+      .container{
+        width: 340px;
+      }
+      .text{
+        padding: 30px;
+      }
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="image">
+      <img src="images/illustration-hero.svg" alt="" srcset="">
+    </div>
+    <div class="text">
+      <div class="title">
+        <h1>Order Summary</h1>
+      </div>
+
+      <div class="subtitle">
+        <p> You can now listen to millions of songs, audiobooks, and podcasts on any
+          device anywhere you like!</p>
+
+      </div>
+
+      <div class="info">
+        <div class="logo">
+          <img src="images/icon-music.svg" alt="" srcset="">
+        </div>
+        <div class="plan-info">
+          <div class="plan">
+            Annual Plan
+
+          </div>
+          <div class="price">
+
+            $59.99/year
+
+          </div>
+
+        </div>
+
+        <div class="change-plan">
+          <a href="http://">Change</a>
+
+        </div>
+
+      </div>
+      <button class="btn">
+        Proceed to Payment
+
+      </button>
+      <div class="cancel">
+        Cancel Order
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Priyobroto Kar</a>.
+  </div>
+</body>
+
+</html>
