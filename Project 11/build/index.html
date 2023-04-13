@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://kit.fontawesome.com/4381e7e1ab.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>
+      Frontend Mentor | Huddle landing page with single introductory section
+    </title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(227, 100%, 92%);
+      }
+    </style>
+  </head>
+  <body class="relative flex flex-col gap-16 font-Poppins max-w-[1600px] mx-auto min-h-screen bg-Violet bg-[url('../images/bg-mobile.svg')] bg-no-repeat bg-contain lg:bg-[url('../images/bg-desktop.svg')] lg:bg-cover lg:bg-center p-10 lg:p-16">
+    <header>
+      <img class="w-[45%] lg:w-[15%]" src="./images/logo.svg" alt="">
+    </header>
+    <main class="flex flex-col flex-1 justify-center items-center">
+      <div class="flex flex-col md:flex-row gap-12 w-full">
+        <div class=" flex-1"><img class="w-full" src="./images/illustration-mockups.svg" alt=""></div>
+        <div class="text-center space-y-5 flex-1 lg:text-left py-10">
+          <h1 class="text-2xl lg:text-4xl font-bold text-white leading-9 lg:leading-relaxed">Build The Community<br>Your Fans Will Love</h1>
+          <p class="text-white opacity-80 max-w-[55ch] text-sm lg:text-base font-normal leading-[1.5rem]">Huddle re-imagines the way we build
+            communities. You have a voice, but so does your audience. Create connections
+            with your users as you engage in genuine discussion.</p>
+          <button class="bg-white text-Violet shadow-[0_3px_8px_0px_rgba(0,0,0,0.2)] rounded-full px-16 py-3 text-sm lg:text-base hover:bg-Soft-Magenta hover:text-white focus-visible:text-white focus-visible:bg-Soft-Magenta transition-colors">Register</button>
+        </div>
+      </div>
+      <aside class="flex w-full justify-center lg:justify-end gap-4 text-white">
+        <a href="" class="hover:text-Soft-Magenta focus-visible:text-Soft-Magenta focus-visible:border-Soft-Magenta hover:border-Soft-Magenta transition-colors inline-block text-center border border-white rounded-full w-10 h-10 focus-visible:outline-none"><i class=" leading-10 fa-brands fa-facebook-f "></i></a>
+        <a href="" class="hover:text-Soft-Magenta focus-visible:text-Soft-Magenta focus-visible:border-Soft-Magenta hover:border-Soft-Magenta transition-colors inline-block text-center border border-white rounded-full w-10 h-10 focus-visible:outline-none"><i class=" leading-10 fa-brands fa-twitter"></i></a>
+        <a href="" class="hover:text-Soft-Magenta focus-visible:text-Soft-Magenta focus-visible:border-Soft-Magenta hover:border-Soft-Magenta transition-colors inline-block text-center border border-white rounded-full w-10 h-10 focus-visible:outline-none"><i class=" leading-10 fa-brands fa-instagram"></i></a>
+  
+      </aside>
+    </main>
+      
+
+    <footer class="text-white absolute bottom-2 left-0 w-full text-center">
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          clas>Frontend Mentor</a
+        >. Coded by <a href="#">Priyobroto Kar</a>.
+      </p>
+    </footer>
+  </body>
+</html>
