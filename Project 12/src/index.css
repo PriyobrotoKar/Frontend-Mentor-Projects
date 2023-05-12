@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:checked + label{
+    background-color: hsl(216, 12%, 54%);
+    color: white;
+    box-shadow: 0 0.1rem 0.5rem 0 rgba(0, 0, 0, 0.493);
+}
