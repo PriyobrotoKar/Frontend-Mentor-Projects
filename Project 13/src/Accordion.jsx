@@ -22,7 +22,7 @@ const Accordion = (props) => {
         </div>
         <p
           className={
-            show ? "h-fit max-h-[100rem] mt-2" : "max-h-0 overflow-hidden"
+            show ? "mt-2 text-Darkgrayishblue" : "max-h-0 overflow-hidden"
           }
         >
           {props.ans}
