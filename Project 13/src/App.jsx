@@ -4,8 +4,8 @@ import Footer from "./Footer";
 function App() {
   return (
     <>
-      <div className="bg-[#ffffff] w-[22rem] sm:w-[52rem] relative  rounded-2xl shadow-2xl flex flex-col sm:flex-row sm:items-center before:content-[url('./images/illustration-box-desktop.svg')] before:absolute before:z-40 before:top-1/2 before:-translate-y-[25%] before:-left-28">
-        <div className="relative -mt-40 sm:mt-0 sm:overflow-hidden sm:h-full sm:flex-[0_0_25rem] sm:flex sm:justify-center sm:items-center">
+      <main className="bg-[#ffffff] w-[22rem] sm:w-[52rem] relative  rounded-2xl shadow-2xl flex flex-col sm:flex-row sm:items-center before:content-[url('./images/illustration-box-desktop.svg')] before:absolute before:z-40 before:top-1/2 before:-translate-y-[25%] before:-left-28">
+        <section className="relative -mt-40 sm:mt-0 sm:overflow-hidden sm:h-full sm:flex-[0_0_25rem] sm:flex sm:justify-center sm:items-center">
           <img
             className="w-[85%] sm:hidden mx-auto"
             src="./images/illustration-woman-online-mobile.svg"
@@ -26,12 +26,14 @@ function App() {
             src="./images/bg-pattern-desktop.svg"
             alt=""
           />
-        </div>
-        <div className="sm:flex-1 sm:pr-24 sm:py-16">
-          <h1 className="text-4xl font-bold text-center mt-10 sm:text-left sm:mt-0">FAQ</h1>
+        </section>
+        <section className="sm:flex-1 sm:pr-24 sm:py-16">
+          <h1 className="text-4xl font-bold text-center mt-10 sm:text-left sm:mt-0">
+            FAQ
+          </h1>
           <Accordions />
-        </div>
-      </div>
+        </section>
+      </main>
       <Footer />
     </>
   );
