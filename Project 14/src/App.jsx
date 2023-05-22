@@ -5,10 +5,12 @@ import InfoText from "./InfoText";
 function App() {
   return (
     <>
-      <main className="w-[20rem] mx-auto rounded-xl bg-white overflow-hidden shadow-xl shadow-[#dbe3ed]">
+      <main className="w-[20rem] sm:w-[50rem] overflow-hidden lg:overflow-visible mx-auto rounded-xl sm:flex bg-white shadow-xl shadow-[#dbe3ed]">
         <BannerImg />
-        <InfoText />
-        <Author />
+        <section>
+          <InfoText />
+          <Author />
+        </section>
       </main>
       <Footer />
     </>

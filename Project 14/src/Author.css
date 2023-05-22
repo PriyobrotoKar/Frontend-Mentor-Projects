@@ -1,0 +1,8 @@
+.active {
+  transform: translateY(0) !important;
+}
+@media screen and (min-width: 1024px) {
+  .active {
+    transform: translateY(-100%) !important;
+  }
+}

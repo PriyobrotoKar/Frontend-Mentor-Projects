@@ -2,9 +2,9 @@ import React from "react";
 
 const BannerImg = () => {
   return (
-    <div>
+    <div className="lg:rounded-l-xl overflow-hidden">
       <img
-        className="h-[13.2rem] w-full object-cover object-top"
+        className="h-[13.2rem] lg:h-full w-full object-cover object-top lg:object-[20%_100%]"
         src="./images/drawers.jpg"
         alt=""
       />
