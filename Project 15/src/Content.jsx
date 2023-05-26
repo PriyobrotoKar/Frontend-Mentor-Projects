@@ -1,8 +1,18 @@
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 
 const Content = () => {
+  const [input, setInput] = useState("");
+  const [error, setError] = useState(false);
+  const validateEmail = () => {
+    if (input.includes("@")) {
+      setError(false);
+    } else {
+      setError(true);
+    }
+  };
+
   return (
     <section className="font-JosefinSans px-10 space-y-10 sm:flex-1">
       <div className="space-y-5  text-center sm:text-left sm:max-w-md sm:mx-auto">
@@ -16,15 +26,40 @@ const Content = () => {
           launch deals.
         </p>
       </div>
-      <div className="w-full flex justify-between border border-grPink rounded-3xl sm:max-w-md sm:mx-auto">
-        <input
-          type="email"
-          placeholder="Email Address"
-          className="px-6 py-3 bg-transparent outline-none placeholder:text-DesaturatedRed placeholder:opacity-50 "
-        />
-        <button className="bg-gradient-to-r from-grPink to-grOrange rounded-3xl px-7 flex justify-center items-center text-2xl text-white shadow-lg shadow-grPink">
-          <FontAwesomeIcon icon={faAngleRight} />
-        </button>
+      <div className="relative sm:max-w-md sm:mx-auto">
+        <div
+          className={
+            "w-full flex justify-between items-center border  rounded-3xl " +
+            (error ? "border-SoftRed" : "border-grPink")
+          }
+        >
+          <input
+            type="email"
+            placeholder="Email Address"
+            onChange={(e) => setInput(e.target.value)}
+            value={input}
+            className="w-0 flex-1 pl-6 py-3 bg-transparent outline-none placeholder:text-DesaturatedRed placeholder:opacity-50 "
+          />
+          {error && (
+            <div className="pr-2">
+              <img src="../public/images/icon-error.svg" alt="" />
+            </div>
+          )}
+          <button
+            onClick={validateEmail}
+            className="bg-gradient-to-r from-grPink to-grOrange hover:from-[#fad8d7] hover:to-[#f3baba] rounded-3xl px-7 flex justify-center items-center self-stretch text-2xl text-white shadow-lg shadow-grPink"
+          >
+            <FontAwesomeIcon icon={faAngleRight} />
+          </button>
+        </div>
+        <div
+          className={
+            (error ? "block" : "hidden") +
+            " absolute -bottom-10 text-SoftRed px-5 py-2"
+          }
+        >
+          Please provide a valid email
+        </div>
       </div>
     </section>
   );
