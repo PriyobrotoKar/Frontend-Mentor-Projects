@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca:wght@200;300;400&display=swap");
+/* font-family: 'Inter', sans-serif;
+font-family: 'Lexend Deca', sans-serif; */
+.attribution {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+.attribution a {
+  color: hsl(228, 93%, 73%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: hsl(233, 47%, 7%);
+  font-family: "Lexend Deca", sans-serif;
+}
+.container {
+  width: 1000px;
+  height: 430px;
+  background-color: hsl(244, 38%, 16%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  display: flex;
+  overflow: hidden;
+}
+.container > section {
+  width: 50%;
+  position: relative;
+}
+.image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(277deg 97% 41% / 36%);
+}
+.image img {
+  height: 100%;
+  width: 100%;
+}
+.mobile {
+  display: none;
+}
+.text {
+  padding: 60px;
+  padding-right: 70px;
+}
+.title {
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 25px;
+}
+.subtitle {
+  font-size: 1rem;
+  color: hsla(0, 0%, 100%, 0.75);
+  margin-bottom: 80px;
+  font-weight: 300;
+  line-height: 24px;
+}
+.features {
+  display: flex;
+  justify-content: space-between;
+}
+.features div {
+  width: calc(100% / 3 - 20px);
+}
+.features h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  font-family: "Inter", sans-serif;
+}
+.stat {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  font-weight: 300;
+  color: hsla(0, 0%, 100%, 0.6);
+}
+.highlight {
+  color: hsl(277, 64%, 61%);
+  background-color: transparent;
+}
+@media (max-width: 425px) {
+  html {
+    font-size: 80%;
+  }
+  .container {
+    flex-direction: column-reverse;
+    width: 340px;
+    height: 700px;
+    border-radius: 10px;
+  }
+  .container > section {
+    width: 100%;
+  }
+  .text {
+    padding: 38px;
+    text-align: center;
+  }
+  .features {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .subtitle {
+    margin-bottom: 20px;
+  }
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .features div {
+    width: 100%;
+  }
+}
