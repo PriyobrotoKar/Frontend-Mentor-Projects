@@ -1,0 +1,10 @@
+input ~ div {
+  display: none;
+}
+input:invalid[focused="true"] {
+  border-width: 0.15rem;
+  border-color: rgb(209, 63, 5);
+}
+input:invalid[focused="true"] ~ div {
+  display: block;
+}
