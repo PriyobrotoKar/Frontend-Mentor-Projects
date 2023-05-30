@@ -4,14 +4,17 @@ const FormInput = (props) => {
   const [focused, setFocused] = useState(false);
   const { onChange, ...inputProps } = props;
   return (
-    <div>
+    <div className="relative">
       <input
         {...inputProps}
         onChange={onChange}
         onBlur={() => setFocused(true)}
         focused={focused.toString()}
-        className="outline-none valid:border-[#4b4b4b] text-sm placeholder:text-[#8a8989] font-semibold border border-[#4b4b4b2f] rounded-lg w-full p-4"
+        className=" outline-none valid:border-[#4b4b4b] text-sm placeholder:text-[#8a8989] font-semibold border border-[#4b4b4b2f] rounded-lg w-full p-4"
       />
+      <div className="absolute right-4 top-4">
+        <img src="./images/icon-error.svg" alt="" />
+      </div>
       <div className="text-xs text-right text-Red font-medium py-2">
         <i>{inputProps.error}</i>
       </div>
