@@ -4,7 +4,7 @@ import EmailAddress from "./EmailAddress";
 const ContentText = () => {
   return (
     <div className="space-y-10 px-6 py-10 font-Roboto-regular text-DarkSlateGrey">
-      <div className="space-y-6">
+      <div className="space-y-5">
         <h1 className=" font-Roboto-bold text-4xl">Stay updated!</h1>
         <p>Join 60,000+ product managers receiving monthly updates on:</p>
         <ul className="space-y-2">
