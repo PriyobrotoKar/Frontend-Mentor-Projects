@@ -1,0 +1,20 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../public/assets/fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: Roboto-Bold;
+  src: url(../public/assets/fonts/Roboto-Bold.ttf);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
