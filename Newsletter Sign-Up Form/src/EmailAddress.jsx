@@ -1,17 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 
 const EmailAddress = () => {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(false);
+  const validateEmail = () => {
+    console.log("clicked");
+    if (email.includes("@") && email.includes(".")) {
+      setError(false);
+    } else {
+      setError(true);
+    }
+  };
   return (
     <div>
-      {" "}
-      <h2 className="text-sm font-Roboto-bold mb-2">Email address</h2>
-      <div className="space-y-5">
+      <div className="flex justify-between">
+        <h2 className="text-xs font-Roboto-bold mb-2">Email address</h2>
+        {error && (
+          <div className="text-xs text-Tomato font-Roboto-bold mb-2">
+            Valid email required
+          </div>
+        )}
+      </div>
+      <div className="space-y-5 text-sm">
         <input
-          className="w-full outline-none border border-Grey rounded-lg p-4"
+          className={
+            "w-full outline-none border placeholder-shown:border-gray-300    transition-all   rounded-lg py-4 px-5 " +
+            (error
+              ? "border-Tomato bg-[#ffe8e6] text-Tomato"
+              : "[&:not(:placeholder-shown)]:border-Grey")
+          }
           type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           placeholder="email@company.com"
         />
-        <button className="font-Roboto-bold tracking-wide outline-red-600 bg-DarkSlateGrey text-White w-full p-4 rounded-lg">
+        <button
+          onClick={validateEmail}
+          className="font-Roboto-bold tracking-wide outline-red-600 bg-DarkSlateGrey text-White hover:bg-Tomato hover:shadow-xl hover:shadow-[#fec5c1] w-full p-4 rounded-lg"
+        >
           Subscribe to monthly newsletter
         </button>
       </div>

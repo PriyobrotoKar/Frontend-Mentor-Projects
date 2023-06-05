@@ -6,7 +6,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="bg-white min-h-[inherit]">
+    <div className="bg-white min-h-[inherit] lg:min-h-full lg:h-[33rem] lg:flex lg:flex-row-reverse w-full lg:w-[50rem] lg:rounded-3xl">
       <HeroImage />
       <ContentText />
       {/* Thanks for subscribing! A confirmation email has been sent to
