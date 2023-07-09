@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 
-const EmailAddress = () => {
+const EmailAddress = ({ setSuccess }) => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState(false);
-  const validateEmail = () => {
+  const validateEmail = (e) => {
+    e.preventDefault();
     console.log("clicked");
     if (email.includes("@") && email.includes(".")) {
       setError(false);
+      setSuccess({
+        status: true,
+        email: email,
+      });
     } else {
       setError(true);
     }
@@ -21,7 +26,7 @@ const EmailAddress = () => {
           </div>
         )}
       </div>
-      <div className="space-y-5 text-sm">
+      <form className="space-y-5 text-sm">
         <input
           className={
             "w-full outline-none border placeholder-shown:border-gray-300    transition-all   rounded-lg py-4 px-5 " +
@@ -40,7 +45,7 @@ const EmailAddress = () => {
         >
           Subscribe to monthly newsletter
         </button>
-      </div>
+      </form>
     </div>
   );
 };

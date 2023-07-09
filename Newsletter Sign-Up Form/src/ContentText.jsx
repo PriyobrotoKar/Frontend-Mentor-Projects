@@ -1,7 +1,7 @@
 import React from "react";
 import EmailAddress from "./EmailAddress";
 
-const ContentText = () => {
+const ContentText = ({ setSuccess }) => {
   return (
     <div className="flex-1 lg:flex lg:flex-col lg:justify-center space-y-10 px-6 lg:px-10 lg:pl-12 py-10 font-Roboto-regular text-DarkSlateGrey">
       <div className="space-y-5">
@@ -44,7 +44,7 @@ const ContentText = () => {
           </li>
         </ul>
       </div>
-      <EmailAddress />
+      <EmailAddress setSuccess={setSuccess} />
     </div>
   );
 };

@@ -1,17 +1,29 @@
 import { useState } from "react";
 import ContentText from "./ContentText";
 import HeroImage from "./HeroImage";
+import SuccessPage from "./SuccessPage";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [success, setSuccess] = useState({
+    status: false,
+    email: "",
+  });
 
   return (
-    <div className="bg-white min-h-[inherit] lg:min-h-full lg:h-[33rem] lg:flex lg:flex-row-reverse w-full lg:w-[50rem] lg:rounded-3xl">
-      <HeroImage />
-      <ContentText />
-      {/* Thanks for subscribing! A confirmation email has been sent to
-      ash@loremcompany.com. Please open it and click the button inside to
-      confirm your subscription. Dismiss message */}
+    <div
+      className={
+        "bg-white min-h-[inherit] lg:min-h-full  lg:flex lg:flex-row-reverse w-full  lg:rounded-3xl " +
+        (success.status ? "lg:w-[28rem] lg:h-fit" : "lg:w-[50rem] lg:h-[33rem]")
+      }
+    >
+      {success.status ? (
+        <SuccessPage success={success} setSuccess={setSuccess} />
+      ) : (
+        <>
+          <HeroImage />
+          <ContentText setSuccess={setSuccess} />
+        </>
+      )}
     </div>
   );
 }
