@@ -204,7 +204,7 @@ const InputFields = ({ setAge }: any) => {
         <button className="bg-Purple hover:bg-Off-black transition rounded-full p-4 lg:p-5 w-fit z-10">
           <img
             className="w-6 h-6 lg:w-10 lg:h-10"
-            src="/assets/images/icon-arrow.svg"
+            src="../public/assets/images/icon-arrow.svg"
             alt=""
           />
         </button>
