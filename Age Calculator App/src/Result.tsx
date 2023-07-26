@@ -1,8 +1,6 @@
-import React from "react";
-
 const Result = ({ age }: any) => {
   return (
-    <div className="text-5xl lg:text-7xl font-extrabold italic lg:space-y-2">
+    <div className="text-5xl lg:text-8xl font-extrabold italic lg:space-y-2">
       <div>
         <span className="text-Purple">{age ? age.years : "--"}</span> years
       </div>

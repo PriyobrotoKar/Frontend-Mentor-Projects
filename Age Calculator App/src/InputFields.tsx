@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { calculateAge } from "./utils/calculateAge.js";
+import moment from "moment";
 type InputType = {
   day: number | null;
   month: number | null;
@@ -35,14 +36,33 @@ const InputFields = ({ setAge }: any) => {
       }
     }
   };
+
+  const isValid = (date: string): boolean => {
+    const d = moment(date, "YYYY-MM-DD");
+    return d.isValid();
+  };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (input?.day && input?.month && input?.year) {
       if (!error.day.status && !error.month.status && !error.year.status) {
-        console.log("submitt");
-        setAge(
-          calculateAge({ day: input.day, month: input.month, year: input.year })
-        );
+        if (isValid(`${input.year}-${input.month}-${input.day}`)) {
+          console.log("submitt");
+          setAge(
+            calculateAge({
+              day: input.day,
+              month: input.month,
+              year: input.year,
+            })
+          );
+        } else {
+          setError({
+            day: { status: true, msg: "Must be a valid date" },
+            month: { status: true, msg: "" },
+            year: { status: true, msg: "" },
+          });
+          return;
+        }
       } else {
         setAge(null);
       }
@@ -59,7 +79,7 @@ const InputFields = ({ setAge }: any) => {
       if (input.day > 31) {
         setError((prev) => ({
           ...prev,
-          day: { status: true, msg: "Must be a valid date" },
+          day: { status: true, msg: "Must be a valid day" },
         }));
       } else {
         setError((prev) => ({
@@ -120,6 +140,7 @@ const InputFields = ({ setAge }: any) => {
             type="number"
             placeholder="DD"
             onChange={handleInput}
+            min={0}
           />
           <div className="absolute top-full text-xs mt-1 text-Light-red italic">
             {error.day.msg}
@@ -145,6 +166,7 @@ const InputFields = ({ setAge }: any) => {
             type="number"
             placeholder="MM"
             onChange={handleInput}
+            min={0}
           />
           <div className="absolute top-full text-xs mt-1 text-Light-red italic">
             {error.month.msg}
