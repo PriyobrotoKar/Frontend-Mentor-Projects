@@ -201,7 +201,7 @@ const InputFields = ({ setAge }: any) => {
       </div>
       <div className="flex justify-center items-center lg:items-end flex-col relative py-7">
         <hr className="w-full absolute h-[0.125rem] bg-Off-white border-0 rounded-full" />
-        <button className="bg-Purple rounded-full p-4 lg:p-5 w-fit z-10">
+        <button className="bg-Purple hover:bg-Off-black transition rounded-full p-4 lg:p-5 w-fit z-10">
           <img
             className="w-6 h-6 lg:w-10 lg:h-10"
             src="/assets/images/icon-arrow.svg"
