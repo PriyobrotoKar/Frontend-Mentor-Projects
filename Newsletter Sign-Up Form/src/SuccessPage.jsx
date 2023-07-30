@@ -5,7 +5,7 @@ const SuccessPage = ({ success, setSuccess }) => {
     <div className="p-6 lg:p-12 flex flex-col gap-10 justify-between  min-h-[inherit]">
       <div className="space-y-6 pt-28 lg:pt-0">
         <div>
-          <img src="/assets/images/icon-success.svg" alt="" />
+          <img src="../public/assets/images/icon-success.svg" alt="" />
         </div>
         <h1 className="font-Roboto-bold text-4xl">Thanks for subscribing!</h1>
         <p className="font-Roboto-regular font-medium">
