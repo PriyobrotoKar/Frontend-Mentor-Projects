@@ -8,8 +8,8 @@ const HeroArticle = () => {
         <h1 className="text-[2.65rem] text-VeryDarkBlue leading-[1.05] py-4 font-extrabold">
           The Bright Future of Web 3.0?
         </h1>
-        <div className="space-y-4">
-          <p className="text-DarkGrayishBlue">
+        <div className="space-y-6">
+          <p className="text-DarkGrayishBlue leading-relaxed">
             We dive into the next evolution of the web that claims to put the
             power of the platforms back into the hands of the people. But is it
             really fulfilling its promise?

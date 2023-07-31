@@ -4,7 +4,7 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   return (
     <>
-      <header className="flex justify-between items-center py-4">
+      <header className="flex justify-between items-center py-4 mt-4">
         <div>
           <img
             className="w-14"
@@ -18,17 +18,17 @@ const Navbar = () => {
       </header>
       <aside
         className={
-          "absolute inset-0 bg-[#000] transition-opacity " +
+          "absolute inset-0 bg-[#000] transition-opacity pointer-events-none " +
           (show ? "opacity-60" : "opacity-0")
         }
       ></aside>
       <aside
         className={
-          "absolute z-20 h-[100svh] w-[70%] bg-OffWhite  top-0 p-6 space-y-20 transition-all  " +
+          "fixed z-20 h-[100svh] w-[70%] bg-OffWhite  top-0 p-6 space-y-20 transition-all  " +
           (show ? "right-0" : "-right-full")
         }
       >
-        <div className="py-4">
+        <div className="py-3">
           <img
             className="ml-auto"
             onClick={() => setShow(!show)}
