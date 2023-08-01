@@ -16,17 +16,19 @@ const NewsList = () => {
     },
   ];
   return (
-    <section className="bg-VeryDarkBlue p-6 mt-16">
-      <h1 className="text-3xl text-SoftOrange font-bold">New</h1>
-      <ul className="space-y-7 mt-6">
+    <section className="bg-VeryDarkBlue p-6 xl:py-10 xl:px-8 ">
+      <h1 className="text-3xl lg:text-4xl xl:text-5xl text-SoftOrange font-bold">
+        New
+      </h1>
+      <ul className="space-y-7 xl:space-y-8 mt-6 xl:mt-10">
         {newNewsData.map((news, i) => {
           return (
             <>
               <li className="space-y-2">
-                <h2 className="text-OffWhite text-xl font-bold">
+                <h2 className="text-OffWhite text-xl md:text-base lg:text-xl xl:text-2xl font-bold">
                   {news.title}
                 </h2>
-                <p className="text-GrayishBlue text-sm tracking-wide leading-relaxed">
+                <p className="text-GrayishBlue text-sm md:text-xs lg:text-sm xl:text-base tracking-wide leading-relaxed ">
                   {news.description}
                 </p>
               </li>

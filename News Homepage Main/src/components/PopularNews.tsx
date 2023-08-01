@@ -17,10 +17,10 @@ const PopularNews = () => {
     },
   ];
   return (
-    <section className="mt-16 space-y-8">
+    <>
       {popularNewsData.map((news, i) => {
         return (
-          <article className="flex gap-6 items-center">
+          <article className="flex gap-6 items-center lg:mt-12">
             <div className="flex-1">
               <img src={news.image} alt="" />
             </div>
@@ -28,7 +28,7 @@ const PopularNews = () => {
               <div className="text-3xl font-bold text-GrayishBlue">{`0${
                 i + 1
               }`}</div>
-              <h1 className="text-[1.1rem] font-extrabold text-VeryDarkBlue">
+              <h1 className="text-[1.1rem] lg:text-base font-extrabold text-VeryDarkBlue">
                 {news.title}
               </h1>
               <p className="text-sm text-DarkGrayishBlue leading-relaxed">
@@ -38,7 +38,7 @@ const PopularNews = () => {
           </article>
         );
       })}
-    </section>
+    </>
   );
 };
 
