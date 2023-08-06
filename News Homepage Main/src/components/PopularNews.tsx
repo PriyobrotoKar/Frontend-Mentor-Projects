@@ -3,17 +3,17 @@ const PopularNews = () => {
     {
       title: "Reviving Retro PCs",
       description: "What happens when old PCs are given modern upgrades?",
-      image: "../../public/assets/images/image-retro-pcs.jpg",
+      image: "./assets/images/image-retro-pcs.jpg",
     },
     {
       title: "Top 10 Laptops of 2022",
       description: "Our best picks for various needs and budgets.",
-      image: "../../public/assets/images/image-top-laptops.jpg",
+      image: "./assets/images/image-top-laptops.jpg",
     },
     {
       title: "The Growth of Gaming",
       description: "How the pandemic has sparked fresh opportunities.",
-      image: "../../public/assets/images/image-gaming-growth.jpg",
+      image: "./assets/images/image-gaming-growth.jpg",
     },
   ];
   return (

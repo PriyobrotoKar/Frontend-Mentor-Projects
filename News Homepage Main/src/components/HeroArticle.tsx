@@ -2,10 +2,10 @@ const HeroArticle = () => {
   return (
     <article className="lg:col-span-2 mb-16 lg:mb-0">
       <div className="py-4 md:hidden">
-        <img src="../../public/assets/images/image-web-3-mobile.jpg" alt="" />
+        <img src="./assets/images/image-web-3-mobile.jpg" alt="" />
       </div>
       <div className=" hidden md:block">
-        <img src="../../public/assets/images/image-web-3-desktop.jpg" alt="" />
+        <img src="./assets/images/image-web-3-desktop.jpg" alt="" />
       </div>
       <div className="flex flex-col md:flex-row md:gap-6 lg:gap-10 md:mt-6">
         <h1 className="text-[2.65rem] md:text-4xl lg:text-5xl xl:text-6xl md:min-w-[14rem] lg:min-w-[16rem] text-VeryDarkBlue leading-[1.05] py-4 md:py-0 font-extrabold">

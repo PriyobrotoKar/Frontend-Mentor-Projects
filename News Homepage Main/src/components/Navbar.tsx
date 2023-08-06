@@ -6,11 +6,7 @@ const Navbar = () => {
     <>
       <header className="flex justify-between items-center py-4 xl:py-8 mt-4">
         <div>
-          <img
-            className="w-14"
-            src="../../public/assets/images/logo.svg"
-            alt=""
-          />
+          <img className="w-14" src="./assets/images/logo.svg" alt="" />
         </div>
         <nav className="hidden lg:block">
           <ul className=" flex gap-6 text-DarkGrayishBlue ">
@@ -22,7 +18,7 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="z-10 md:hidden" onClick={() => setShow(!show)}>
-          <img src="../../public/assets/images/icon-menu.svg" alt="" />
+          <img src="./assets/images/icon-menu.svg" alt="" />
         </div>
       </header>
       <aside
@@ -41,7 +37,7 @@ const Navbar = () => {
           <img
             className="ml-auto"
             onClick={() => setShow(!show)}
-            src="../../public/assets/images/icon-menu-close.svg"
+            src="./assets/images/icon-menu-close.svg"
             alt=""
           />
         </div>
