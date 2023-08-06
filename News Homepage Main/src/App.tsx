@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="px-6 max-w-[1440px] mx-auto">
       <Navbar />
-      <main className="grid lg:grid-cols-3 gap-16 lg:gap-10">
+      <main className="lg:grid lg:grid-cols-3 gap-16 lg:gap-10">
         <HeroArticle />
         <NewsList />
 

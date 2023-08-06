@@ -20,7 +20,12 @@ const PopularNews = () => {
     <>
       {popularNewsData.map((news, i) => {
         return (
-          <article className="flex gap-6 items-center lg:mt-12">
+          <article
+            className={
+              "flex gap-6 items-center xl:mt-12 " +
+              (i === popularNewsData.length - 1 ? "" : "mb-6 lg:mb-0")
+            }
+          >
             <div className="flex-1">
               <img src={news.image} alt="" />
             </div>

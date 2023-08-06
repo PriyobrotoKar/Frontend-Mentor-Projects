@@ -1,6 +1,6 @@
 const HeroArticle = () => {
   return (
-    <article className="lg:col-span-2 ">
+    <article className="lg:col-span-2 mb-16 lg:mb-0">
       <div className="py-4 md:hidden">
         <img src="../../public/assets/images/image-web-3-mobile.jpg" alt="" />
       </div>

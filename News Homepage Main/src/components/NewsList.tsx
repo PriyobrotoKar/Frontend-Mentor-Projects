@@ -16,7 +16,7 @@ const NewsList = () => {
     },
   ];
   return (
-    <section className="bg-VeryDarkBlue p-6 xl:py-10 xl:px-8 ">
+    <section className="bg-VeryDarkBlue p-6 xl:py-10 xl:px-8 mb-16 lg:mb-0 ">
       <h1 className="text-3xl lg:text-4xl xl:text-5xl text-SoftOrange font-bold">
         New
       </h1>
