@@ -24,17 +24,17 @@ const NewsList = () => {
         {newNewsData.map((news, i) => {
           return (
             <>
-              <li className="space-y-2">
+              <li>
                 <h2 className="text-OffWhite text-xl md:text-base lg:text-xl xl:text-2xl font-bold hover:text-SoftOrange transition-colors cursor-pointer">
                   {news.title}
                 </h2>
-                <p className="text-GrayishBlue text-sm md:text-xs lg:text-sm xl:text-base tracking-wide leading-relaxed ">
+                <p className="mt-2 text-GrayishBlue text-sm md:text-xs lg:text-sm xl:text-base tracking-wide leading-relaxed ">
                   {news.description}
                 </p>
+                {i !== newNewsData.length - 1 && (
+                  <hr className="text-DarkGrayishBlue h-0 border-b-[0] xl:mt-8 mt-7" />
+                )}
               </li>
-              {i !== newNewsData.length - 1 && (
-                <hr className="text-DarkGrayishBlue h-0 border-b-[0]" />
-              )}
             </>
           );
         })}
