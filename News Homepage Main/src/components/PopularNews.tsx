@@ -33,7 +33,7 @@ const PopularNews = () => {
               <div className="text-3xl font-bold text-GrayishBlue">{`0${
                 i + 1
               }`}</div>
-              <h1 className="text-[1.1rem] lg:text-base font-extrabold text-VeryDarkBlue">
+              <h1 className="text-[1.1rem] lg:text-base xl:text-xl font-extrabold text-VeryDarkBlue hover:text-SoftRed transition-colors cursor-pointer">
                 {news.title}
               </h1>
               <p className="text-sm text-DarkGrayishBlue leading-relaxed">

@@ -9,12 +9,22 @@ const Navbar = () => {
           <img className="w-14" src="./assets/images/logo.svg" alt="" />
         </div>
         <nav className="hidden lg:block">
-          <ul className=" flex gap-6 text-DarkGrayishBlue ">
-            <li>Home</li>
-            <li>New</li>
-            <li>Popular</li>
-            <li>Trending</li>
-            <li>Categories</li>
+          <ul className=" flex gap-6 text-DarkGrayishBlue">
+            <li className=" cursor-pointer hover:text-SoftRed transition-colors">
+              Home
+            </li>
+            <li className=" cursor-pointer hover:text-SoftRed transition-colors">
+              New
+            </li>
+            <li className=" cursor-pointer hover:text-SoftRed transition-colors">
+              Popular
+            </li>
+            <li className=" cursor-pointer hover:text-SoftRed transition-colors">
+              Trending
+            </li>
+            <li className=" cursor-pointer hover:text-SoftRed transition-colors">
+              Categories
+            </li>
           </ul>
         </nav>
         <div className="z-10 md:hidden" onClick={() => setShow(!show)}>

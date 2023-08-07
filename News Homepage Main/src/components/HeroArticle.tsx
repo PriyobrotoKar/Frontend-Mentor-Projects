@@ -17,7 +17,7 @@ const HeroArticle = () => {
             power of the platforms back into the hands of the people. But is it
             really fulfilling its promise?
           </p>
-          <button className="bg-SoftRed px-6 py-3 text-sm md:text-xs tracking-[0.3rem] font-medium text-OffWhite">
+          <button className="bg-SoftRed px-6 py-3 text-sm md:text-xs tracking-[0.3rem] font-medium text-OffWhite hover:bg-VeryDarkBlue">
             READ MORE
           </button>
         </div>

@@ -25,7 +25,7 @@ const NewsList = () => {
           return (
             <>
               <li className="space-y-2">
-                <h2 className="text-OffWhite text-xl md:text-base lg:text-xl xl:text-2xl font-bold">
+                <h2 className="text-OffWhite text-xl md:text-base lg:text-xl xl:text-2xl font-bold hover:text-SoftOrange transition-colors cursor-pointer">
                   {news.title}
                 </h2>
                 <p className="text-GrayishBlue text-sm md:text-xs lg:text-sm xl:text-base tracking-wide leading-relaxed ">
