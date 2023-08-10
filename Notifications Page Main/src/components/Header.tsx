@@ -8,7 +8,7 @@ const Header = ({ setNotifications, unreadcount, setUnreadCount }: any) => {
   };
 
   return (
-    <header className="flex justify-between mt-6">
+    <header className="flex justify-between w-full">
       <div className="flex items-end gap-2">
         <h1 className="font-bold text-xl">Notifications</h1>
         <div className="py-0.5 w-9 text-center rounded-md bg-Blue font-bold text-White">

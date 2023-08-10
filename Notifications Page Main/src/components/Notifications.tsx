@@ -15,7 +15,9 @@ const Notifications = ({
     setNotifications((prev: object[]) =>
       prev.map((n: any) => (n.id === index ? { ...n, isRead: true } : n))
     );
-    setUnreadCount((prev: number) => (unreadcount > 0 ? prev - 1 : 0));
+    if (!notifications[index - 1].isRead) {
+      setUnreadCount((prev: number) => (unreadcount > 0 ? prev - 1 : 0));
+    }
   };
   return (
     <section className="space-y-4 mt-6 text-sm ">
