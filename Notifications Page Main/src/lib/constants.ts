@@ -99,7 +99,7 @@ const data = [
       username: "Nathan Peterson",
       userPic: "./assets/images/avatar-nathan-peterson.webp",
     },
-    time: "2weeks ago",
+    time: "2 weeks ago",
     details: {
       action: "reacted to your recent post",
       post: "5 end-game stategies to increase your win rate",
@@ -115,7 +115,7 @@ const data = [
       username: "Anna Kim",
       userPic: "./assets/images/avatar-anna-kim.webp",
     },
-    time: "2weeks ago",
+    time: "2 weeks ago",
     details: {
       action: "left the group",
       post: "",

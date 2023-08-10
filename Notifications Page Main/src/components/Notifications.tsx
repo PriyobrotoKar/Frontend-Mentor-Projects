@@ -28,7 +28,7 @@ const Notifications = ({
             onClick={() => handleNotificationClick(i + 1)}
             className={
               (item.isRead ? "" : "bg-Verylightgrayishblue") +
-              " rounded-lg p-4 flex gap-3"
+              " rounded-lg p-4 flex gap-3 cursor-pointer"
             }
           >
             <div className="w-10 ">

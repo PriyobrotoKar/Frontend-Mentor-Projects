@@ -1,4 +1,3 @@
-import { useState } from "react";
 const Header = ({ setNotifications, unreadcount, setUnreadCount }: any) => {
   const markAsRead = () => {
     setNotifications((prev: object[]) =>
