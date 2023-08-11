@@ -35,31 +35,32 @@ const Notifications = ({
               <img src={item.user.userPic} alt="" />
             </div>
             <div className="flex-1">
-              <span className="font-bold">{item.user.username}</span>{" "}
+              <span className="font-bold hover:text-Blue ">
+                {item.user.username}
+              </span>{" "}
               <span className="text-Darkgrayishblue">
                 {item.details.action}
               </span>{" "}
-              <span className="font-bold text-Darkgrayishblue">
-                {item.details.post}
+              <span className="font-bold text-Darkgrayishblue hover:text-Blue ">
+                {item.details.post || item.details.group}{" "}
               </span>
-              <span className="font-bold text-Blue">{item.details.group}</span>{" "}
               {!item.isRead && (
                 <div className="w-2 h-2 bg-Red inline-block rounded-full ml-1"></div>
               )}
               <div className="text-Grayishblue">{item.time}</div>
-              <div
-                className={
-                  item.details.pvtMessage
-                    ? "border border-Lightgrayishblue2 text-Darkgrayishblue p-4 rounded mt-2"
-                    : ""
-                }
-              >
-                {item.details.pvtMessage}
-              </div>
+              {item.details.pvtMessage && (
+                <div className="outline outline-1 outline-Lightgrayishblue2 text-Darkgrayishblue p-4 rounded mt-2 hover:bg-Lightgrayishblue1 hover:outline-none transition-all ">
+                  {item.details.pvtMessage}
+                </div>
+              )}
             </div>
             {item.details.picture && (
               <div className="w-10">
-                <img src={item.details.picture} alt="" />
+                <img
+                  className="outline outline-3 outline-White hover:outline-Lightgrayishblue2 transition-all rounded-lg"
+                  src={item.details.picture}
+                  alt=""
+                />
               </div>
             )}
           </div>

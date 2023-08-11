@@ -14,8 +14,11 @@ const Header = ({ setNotifications, unreadcount, setUnreadCount }: any) => {
           {unreadcount}
         </div>
       </div>
-      <button className="text-Darkgrayishblue" onClick={markAsRead}>
-        Mark as all read
+      <button
+        className="text-Darkgrayishblue hover:text-Blue "
+        onClick={markAsRead}
+      >
+        Mark all as read
       </button>
     </header>
   );
