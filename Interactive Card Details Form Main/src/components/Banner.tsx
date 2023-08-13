@@ -1,4 +1,12 @@
-const Banner = () => {
+import CardDetails from "../type";
+
+const Banner = ({
+  cardDetails,
+  setCardDetails,
+}: {
+  cardDetails: CardDetails;
+  setCardDetails: React.Dispatch<React.SetStateAction<CardDetails>>;
+}) => {
   return (
     <section className="bg-[url('../../public/images/bg-main-mobile.png')] bg-cover h-[15rem] pt-8 px-4">
       <div className="">
@@ -22,11 +30,13 @@ const Banner = () => {
           />
           <div className="space-y-3">
             <div className="text-[1.2rem] tracking-[0.09em]">
-              0000 0000 0000 0000
+              {cardDetails.cardNumber}
             </div>
             <div className="flex justify-between text-[0.65rem] uppercase text-Lightgrayishviolet tracking-widest">
-              <div>Jane Appleseed</div>
-              <div>00/00</div>
+              <div>{cardDetails.cardHolder}</div>
+              <div>
+                {cardDetails.month}/{cardDetails.year}
+              </div>
             </div>
           </div>
         </div>

@@ -1,13 +1,27 @@
+import { useState } from "react";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
 
 function App() {
+  const cardInitialDetails = {
+    cardNumber: "0000 0000 0000 0000",
+    cardHolder: "Jane Appleseed",
+
+    month: "00",
+    year: "00",
+  };
+  const [cardDetails, setCardDetails] = useState(cardInitialDetails);
+
   return (
     <>
       <main>
-        <Banner />
-        <Form />
+        <Banner cardDetails={cardDetails} setCardDetails={setCardDetails} />
+        <Form
+          cardDetails={cardDetails}
+          setCardDetails={setCardDetails}
+          cardInitialDetails={cardInitialDetails}
+        />
       </main>
       {/* Confirm Thank you! We've added your card details Continue */}
       <Footer />
