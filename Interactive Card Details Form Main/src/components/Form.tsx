@@ -1,3 +1,5 @@
+import React from "react";
+import useForm from "../hooks/useForm";
 import CardDetails from "../type";
 
 const Form = ({
@@ -9,24 +11,20 @@ const Form = ({
   setCardDetails: React.Dispatch<React.SetStateAction<CardDetails>>;
   cardInitialDetails: CardDetails;
 }) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setCardDetails({
-      ...cardDetails,
-      [e.target.name]:
-        e.target.value === ""
-          ? cardInitialDetails[e.target.name as keyof CardDetails]
-          : e.target.value,
-    });
-  };
+  const {
+    handleHolderNameChange,
+    handleNumberChange,
+    handleExpMonthChange,
+    handleExpYearChange,
+    handleSubmitForm,
+    errors,
+  } = useForm(cardDetails, setCardDetails, cardInitialDetails);
+
   return (
     <section className="mt-24 px-6">
-      <form
-        onSubmit={() => {
-          return false;
-        }}
-      >
-        <div className="space-y-4">
-          <div className="space-y-1">
+      <form>
+        <div className="space-y-6">
+          <div className="space-y-1 relative">
             <label
               htmlFor=""
               className="uppercase text-xs tracking-[0.15em] text-Verydarkviolet font-semibold "
@@ -36,12 +34,18 @@ const Form = ({
             <input
               type="text"
               name="cardHolder"
-              onChange={handleChange}
+              onChange={handleHolderNameChange}
               placeholder="e.g. Jane Appaleseed"
-              className="block border outline-none text-[1.10rem] border-Lightgrayishviolet rounded-md px-4 py-2 w-full placeholder:text-Lightgrayishviolet focus:border-Verydarkviolet"
+              className={
+                "block border outline-none text-[1.10rem]  rounded-md px-4 py-2 w-full placeholder:text-Lightgrayishviolet focus:border-Verydarkviolet " +
+                (errors.cardHolder ? "border-Red" : "border-Lightgrayishviolet")
+              }
             />
+            <p className="text-Red text-xs absolute top-full">
+              {errors.cardHolder}
+            </p>
           </div>
-          <div className="space-y-1">
+          <div className="space-y-1 relative">
             <label
               htmlFor=""
               className="uppercase text-xs tracking-[0.15em] text-Verydarkviolet font-semibold "
@@ -53,13 +57,21 @@ const Form = ({
               inputMode="numeric"
               pattern="\d"
               name="cardNumber"
-              onChange={handleChange}
+              value={
+                cardDetails.cardNumber === cardInitialDetails.cardNumber
+                  ? ""
+                  : cardDetails.cardNumber
+              }
+              onChange={handleNumberChange}
               placeholder="e.g. 1234 5678 9123 0000"
               className="block border outline-none text-[1.10rem] border-Lightgrayishviolet rounded-md   px-4 py-2 w-full placeholder:text-Lightgrayishviolet "
             />
+            <p className="text-Red text-xs absolute top-full">
+              {errors.cardNumber}
+            </p>
           </div>
           <div className="flex gap-2">
-            <div className="space-y-1  flex-1">
+            <div className="space-y-1  flex-1 relative">
               <label
                 htmlFor=""
                 className="uppercase text-xs tracking-[0.15em] text-Verydarkviolet font-semibold "
@@ -68,20 +80,38 @@ const Form = ({
               </label>
               <div className="flex gap-2">
                 <input
-                  type="text"
+                  type="number"
                   name="month"
-                  onChange={handleChange}
+                  value={
+                    cardDetails.month === cardInitialDetails.month
+                      ? ""
+                      : cardDetails.month
+                  }
+                  onChange={handleExpMonthChange}
                   placeholder="MM"
                   className="block border outline-none text-[1.10rem] border-Lightgrayishviolet rounded-md   px-4 py-2 w-full placeholder:text-Lightgrayishviolet "
                 />
+
                 <input
-                  type="text"
+                  type="number"
                   name="year"
-                  onChange={handleChange}
+                  value={
+                    cardDetails.year === cardInitialDetails.year
+                      ? ""
+                      : cardDetails.year
+                  }
+                  onChange={handleExpYearChange}
                   placeholder="YY"
                   className="block border outline-none text-[1.10rem] border-Lightgrayishviolet rounded-md   px-4 py-2 w-full placeholder:text-Lightgrayishviolet "
                 />
               </div>
+              <p className="text-Red text-xs absolute top-full">
+                {errors.month && errors.year
+                  ? errors.month === errors.year
+                    ? errors.month
+                    : "Invalid date"
+                  : errors.month || errors.year}
+              </p>
             </div>
             <div className="space-y-1 flex-1">
               <label
@@ -99,7 +129,10 @@ const Form = ({
           </div>
         </div>
 
-        <button className="w-full bg-Verydarkviolet text-Lightgrayishviolet p-3 rounded-lg mt-6">
+        <button
+          onClick={handleSubmitForm}
+          className="w-full bg-Verydarkviolet text-Lightgrayishviolet p-3 rounded-lg mt-8"
+        >
           Confirm
         </button>
       </form>

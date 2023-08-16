@@ -30,7 +30,16 @@ const Banner = ({
           />
           <div className="space-y-3">
             <div className="text-[1.2rem] tracking-[0.09em]">
-              {cardDetails.cardNumber}
+              {`${cardDetails.cardNumber.substring(
+                0,
+                4
+              )} ${cardDetails.cardNumber.substring(
+                4,
+                8
+              )} ${cardDetails.cardNumber.substring(
+                8,
+                12
+              )} ${cardDetails.cardNumber.substring(12)}`}
             </div>
             <div className="flex justify-between text-[0.65rem] uppercase text-Lightgrayishviolet tracking-widest">
               <div>{cardDetails.cardHolder}</div>

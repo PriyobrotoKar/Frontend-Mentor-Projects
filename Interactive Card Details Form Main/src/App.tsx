@@ -5,7 +5,7 @@ import Form from "./components/Form";
 
 function App() {
   const cardInitialDetails = {
-    cardNumber: "0000 0000 0000 0000",
+    cardNumber: "0000000000000000",
     cardHolder: "Jane Appleseed",
 
     month: "00",
