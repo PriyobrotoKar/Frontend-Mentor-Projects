@@ -1,23 +1,12 @@
 import React, { useState, useEffect } from "react";
 import CardDetails from "../type";
-import {
-  validateCardHolder,
-  validateCardNumber,
-  validateForm,
-  validateMonth,
-  validateYear,
-} from "../validate";
+import useValidate from "../useValidate";
+
 const useForm = (
   cardDetails: CardDetails,
   setCardDetails: React.Dispatch<React.SetStateAction<CardDetails>>,
   cardInitialDetails: CardDetails
 ) => {
-  const [errors, setErrors] = useState({
-    cardNumber: "",
-    cardHolder: "",
-    month: "",
-    year: "",
-  });
   const handleNumberChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value.toString().length <= 16) {
       setCardDetails({
@@ -74,23 +63,12 @@ const useForm = (
       });
     }
   };
-  const handleSubmitForm = (e: React.FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    validateForm(cardDetails, cardInitialDetails, setErrors);
-  };
-  useEffect(() => {
-    validateCardHolder(cardDetails, cardInitialDetails, setErrors);
-    validateCardNumber(cardDetails, cardInitialDetails, setErrors);
-    validateMonth(cardDetails, cardInitialDetails, setErrors);
-    validateYear(cardDetails, cardInitialDetails, setErrors);
-  }, [cardDetails]);
+
   return {
     handleHolderNameChange,
     handleNumberChange,
     handleExpMonthChange,
     handleExpYearChange,
-    handleSubmitForm,
-    errors,
   };
 };
 

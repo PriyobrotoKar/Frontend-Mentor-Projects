@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useForm from "../hooks/useForm";
 import CardDetails from "../type";
+import useValidate from "../useValidate";
 
 const Form = ({
   cardDetails,
@@ -16,9 +17,17 @@ const Form = ({
     handleNumberChange,
     handleExpMonthChange,
     handleExpYearChange,
-    handleSubmitForm,
-    errors,
   } = useForm(cardDetails, setCardDetails, cardInitialDetails);
+
+  const { errors, validateForm } = useValidate(cardDetails, cardInitialDetails);
+  const handleSubmitForm = (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    validateForm();
+  };
+
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
 
   return (
     <section className="mt-24 px-6">
