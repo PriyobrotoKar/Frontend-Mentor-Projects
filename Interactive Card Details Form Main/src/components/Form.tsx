@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useForm from "../hooks/useForm";
 import CardDetails from "../type";
-import useValidate from "../useValidate";
+import useValidate from "../hooks/useValidate";
 
 const Form = ({
   cardDetails,
@@ -17,16 +17,37 @@ const Form = ({
     handleNumberChange,
     handleExpMonthChange,
     handleExpYearChange,
+    handleCvc,
   } = useForm(cardDetails, setCardDetails, cardInitialDetails);
 
   const { errors, validateForm } = useValidate(cardDetails, cardInitialDetails);
+  const [isSubmit, setIsSubmit] = useState<boolean | null>(null);
+
   const handleSubmitForm = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     validateForm();
-  };
 
+    if (isSubmit) {
+      console.log("submitted successfully");
+    } else {
+      console.log("Not submitted");
+    }
+  };
   useEffect(() => {
-    console.log(errors);
+    for (const key in cardDetails) {
+      if (
+        cardDetails[key as keyof CardDetails] !==
+        cardInitialDetails[key as keyof CardDetails]
+      ) {
+        setIsSubmit(true);
+      }
+    }
+    for (const i in errors) {
+      if (errors[i as keyof CardDetails]) {
+        setIsSubmit(false);
+        break;
+      }
+    }
   }, [errors]);
 
   return (
@@ -73,7 +94,10 @@ const Form = ({
               }
               onChange={handleNumberChange}
               placeholder="e.g. 1234 5678 9123 0000"
-              className="block border outline-none text-[1.10rem] border-Lightgrayishviolet rounded-md   px-4 py-2 w-full placeholder:text-Lightgrayishviolet "
+              className={
+                "block border outline-none text-[1.10rem]  rounded-md px-4 py-2 w-full placeholder:text-Lightgrayishviolet focus:border-Verydarkviolet " +
+                (errors.cardNumber ? "border-Red" : "border-Lightgrayishviolet")
+              }
             />
             <p className="text-Red text-xs absolute top-full">
               {errors.cardNumber}
@@ -98,7 +122,10 @@ const Form = ({
                   }
                   onChange={handleExpMonthChange}
                   placeholder="MM"
-                  className="block border outline-none text-[1.10rem] border-Lightgrayishviolet rounded-md   px-4 py-2 w-full placeholder:text-Lightgrayishviolet "
+                  className={
+                    "block border outline-none text-[1.10rem]  rounded-md px-4 py-2 w-full placeholder:text-Lightgrayishviolet focus:border-Verydarkviolet " +
+                    (errors.month ? "border-Red" : "border-Lightgrayishviolet")
+                  }
                 />
 
                 <input
@@ -111,18 +138,24 @@ const Form = ({
                   }
                   onChange={handleExpYearChange}
                   placeholder="YY"
-                  className="block border outline-none text-[1.10rem] border-Lightgrayishviolet rounded-md   px-4 py-2 w-full placeholder:text-Lightgrayishviolet "
+                  className={
+                    "block border outline-none text-[1.10rem]  rounded-md px-4 py-2 w-full placeholder:text-Lightgrayishviolet focus:border-Verydarkviolet " +
+                    (errors.year ? "border-Red" : "border-Lightgrayishviolet")
+                  }
                 />
               </div>
               <p className="text-Red text-xs absolute top-full">
                 {errors.month && errors.year
                   ? errors.month === errors.year
                     ? errors.month
-                    : "Invalid date"
+                    : errors.month === "Can't be blank" ||
+                      errors.year === "Can't be blank"
+                    ? "Can't be blank"
+                    : "Invalid Date"
                   : errors.month || errors.year}
               </p>
             </div>
-            <div className="space-y-1 flex-1">
+            <div className="space-y-1 flex-1 relative">
               <label
                 htmlFor=""
                 className="uppercase text-xs tracking-[0.15em] text-Verydarkviolet font-semibold "
@@ -130,10 +163,20 @@ const Form = ({
                 CVC
               </label>
               <input
-                type="text"
+                type="number"
+                value={
+                  cardDetails.cvc === cardInitialDetails.cvc
+                    ? ""
+                    : cardDetails.cvc
+                }
+                onChange={handleCvc}
                 placeholder="e.g. 123"
-                className="block border outline-none text-[1.10rem] border-Lightgrayishviolet rounded-md   px-4 py-2 w-full placeholder:text-Lightgrayishviolet "
+                className={
+                  "block border outline-none text-[1.10rem]  rounded-md px-4 py-2 w-full placeholder:text-Lightgrayishviolet focus:border-Verydarkviolet " +
+                  (errors.cvc ? "border-Red" : "border-Lightgrayishviolet")
+                }
               />
+              <p className="text-Red text-xs absolute top-full">{errors.cvc}</p>
             </div>
           </div>
         </div>

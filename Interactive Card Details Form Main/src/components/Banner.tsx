@@ -9,12 +9,10 @@ const Banner = ({
 }) => {
   return (
     <section className="bg-[url('../../public/images/bg-main-mobile.png')] bg-cover h-[15rem] pt-8 px-4">
-      <div className="">
-        <img
-          className="w-[18rem] ml-auto"
-          src="../../public/images/bg-card-back.png"
-          alt=""
-        />
+      <div className="relative w-[18rem] h-[10rem] ml-auto bg-[url('../../public/images/bg-card-back.png')] bg-cover bg-center">
+        <div className="text-[0.65rem] text-White tracking-widest absolute top-[4.45rem] right-9">
+          {cardDetails.cvc}
+        </div>
       </div>
       <div className="relative p-5 bottom-[4.3rem] w-[18rem] bg-[url('../../public/images/bg-card-front.png')] bg-cover bg-center rounded-md">
         {/* <img

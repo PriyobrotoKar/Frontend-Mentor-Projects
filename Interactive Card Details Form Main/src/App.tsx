@@ -7,7 +7,7 @@ function App() {
   const cardInitialDetails = {
     cardNumber: "0000000000000000",
     cardHolder: "Jane Appleseed",
-
+    cvc: "000",
     month: "00",
     year: "00",
   };

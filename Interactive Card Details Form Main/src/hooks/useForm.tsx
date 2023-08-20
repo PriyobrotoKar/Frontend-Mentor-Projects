@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import CardDetails from "../type";
-import useValidate from "../useValidate";
+import useValidate from "./useValidate";
 
 const useForm = (
   cardDetails: CardDetails,
@@ -26,42 +26,22 @@ const useForm = (
     });
   };
   const handleExpMonthChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (Number(e.target.value) < 10) {
-      setCardDetails({
-        ...cardDetails,
-        month:
-          e.target.value === ""
-            ? cardInitialDetails.month
-            : `0${e.target.value}`,
-      });
-    } else {
-      setCardDetails({
-        ...cardDetails,
-        month:
-          e.target.value === ""
-            ? cardInitialDetails.month
-            : e.target.value.substring(1),
-      });
-    }
+    setCardDetails({
+      ...cardDetails,
+      month: e.target.value === "" ? cardInitialDetails.month : e.target.value,
+    });
   };
   const handleExpYearChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (Number(e.target.value) < 10) {
-      setCardDetails({
-        ...cardDetails,
-        year:
-          e.target.value === ""
-            ? cardInitialDetails.year
-            : `0${e.target.value}`,
-      });
-    } else {
-      setCardDetails({
-        ...cardDetails,
-        year:
-          e.target.value === ""
-            ? cardInitialDetails.year
-            : e.target.value.substring(1),
-      });
-    }
+    setCardDetails({
+      ...cardDetails,
+      year: e.target.value === "" ? cardInitialDetails.year : e.target.value,
+    });
+  };
+  const handleCvc = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCardDetails({
+      ...cardDetails,
+      cvc: e.target.value,
+    });
   };
 
   return {
@@ -69,6 +49,7 @@ const useForm = (
     handleNumberChange,
     handleExpMonthChange,
     handleExpYearChange,
+    handleCvc,
   };
 };
 

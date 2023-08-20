@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import CardDetails from "./type";
+import CardDetails from "../type";
 
 const useValidate = (
   cardDetails: CardDetails,
@@ -8,6 +8,7 @@ const useValidate = (
   const [errors, setErrors] = useState({
     cardNumber: "",
     cardHolder: "",
+    cvc: "",
     month: "",
     year: "",
   });
@@ -30,6 +31,21 @@ const useValidate = (
         }));
       } else {
         setErrors((prev) => ({ ...prev, cardNumber: "" }));
+      }
+    }
+    validateMonth();
+    validateYear();
+    if (cardDetails.cvc !== cardInitialDetails.cvc) {
+      if (cardDetails.cvc.length < 3 || cardDetails.cvc.length > 4) {
+        setErrors((prev) => ({
+          ...prev,
+          cvc: "Invalid CVC",
+        }));
+      } else {
+        setErrors((prev) => ({
+          ...prev,
+          cvc: "",
+        }));
       }
     }
   };
@@ -87,11 +103,27 @@ const useValidate = (
       }
     }
   };
+  const validateCvc = () => {
+    if (cardDetails.cvc !== cardInitialDetails.cvc) {
+      if (cardDetails.cvc.length > 4) {
+        setErrors((prev) => ({
+          ...prev,
+          cvc: "Invalid CVC",
+        }));
+      } else {
+        setErrors((prev) => ({
+          ...prev,
+          cvc: "",
+        }));
+      }
+    }
+  };
   useEffect(() => {
     validateCardHolder();
     validateCardNumber();
     validateMonth();
     validateYear();
+    validateCvc();
   }, [cardDetails]);
 
   return { validateForm, errors };
