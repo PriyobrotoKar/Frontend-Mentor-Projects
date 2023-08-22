@@ -8,7 +8,7 @@ const Banner = ({
   setCardDetails: React.Dispatch<React.SetStateAction<CardDetails>>;
 }) => {
   return (
-    <section className="bg-[url('../../public/images/bg-main-mobile.png')] bg-cover h-[15rem] pt-8 px-4">
+    <section className="bg-[url('../../public/images/bg-main-mobile.png')] bg-cover h-[15rem] lg:h-auto lg:self-stretch flex-1 pt-8 px-4">
       <div className="relative w-[18rem] h-[10rem] ml-auto bg-[url('../../public/images/bg-card-back.png')] bg-cover bg-center">
         <div className="text-[0.65rem] text-White tracking-widest absolute top-[4.45rem] right-9">
           {cardDetails.cvc}

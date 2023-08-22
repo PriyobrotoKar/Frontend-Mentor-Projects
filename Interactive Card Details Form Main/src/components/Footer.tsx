@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="attribution mt-auto ">
+    <footer className="attribution mt-auto lg:absolute w-full text-center bottom-0">
       Challenge by{" "}
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
         Frontend Mentor

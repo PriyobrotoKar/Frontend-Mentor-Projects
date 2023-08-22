@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useForm from "../hooks/useForm";
 import CardDetails from "../type";
 import useValidate from "../hooks/useValidate";
@@ -19,7 +20,7 @@ const Form = ({
     handleExpYearChange,
     handleCvc,
   } = useForm(cardDetails, setCardDetails, cardInitialDetails);
-
+  const navigate = useNavigate();
   const { errors, validateForm } = useValidate(cardDetails, cardInitialDetails);
   const [isSubmit, setIsSubmit] = useState<boolean | null>(null);
 
@@ -28,9 +29,7 @@ const Form = ({
     validateForm();
 
     if (isSubmit) {
-      console.log("submitted successfully");
-    } else {
-      console.log("Not submitted");
+      navigate("/thankyou");
     }
   };
   useEffect(() => {
@@ -51,7 +50,7 @@ const Form = ({
   }, [errors]);
 
   return (
-    <section className="mt-24 px-6">
+    <section className="mt-24 px-6 flex-[2.5_2_0%]">
       <form>
         <div className="space-y-6">
           <div className="space-y-1 relative">
