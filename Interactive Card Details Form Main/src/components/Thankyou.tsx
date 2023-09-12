@@ -22,7 +22,7 @@ const Thankyou = ({
     }
   }, []);
   return (
-    <div className="mt-24 px-6 text-center">
+    <div className="mt-24 lg:mt-0 px-6 text-center flex-[2.5_2_0%]">
       <div className="space-y-8">
         <img
           className="mx-auto"
@@ -38,7 +38,7 @@ const Thankyou = ({
           </div>
         </div>
       </div>
-      <button className="w-full bg-Verydarkviolet text-Lightgrayishviolet p-3 rounded-lg mt-12">
+      <button className="w-full lg:w-auto bg-Verydarkviolet text-Lightgrayishviolet p-3 lg:px-40 rounded-lg mt-12">
         Continue
       </button>
     </div>

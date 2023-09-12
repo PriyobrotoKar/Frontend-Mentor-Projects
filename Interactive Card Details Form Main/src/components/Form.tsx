@@ -50,8 +50,8 @@ const Form = ({
   }, [errors]);
 
   return (
-    <section className="mt-24 px-6 flex-[2.5_2_0%]">
-      <form>
+    <section className="mt-24 lg:mt-0 px-6 flex-[2.5_2_0%]">
+      <form className="max-w-md mx-auto">
         <div className="space-y-6">
           <div className="space-y-1 relative">
             <label

@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
 import CardDetails from "../type";
-import useValidate from "./useValidate";
 
 const useForm = (
   cardDetails: CardDetails,
@@ -40,7 +38,7 @@ const useForm = (
   const handleCvc = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCardDetails({
       ...cardDetails,
-      cvc: e.target.value,
+      cvc: e.target.value === "" ? cardInitialDetails.cvc : e.target.value,
     });
   };
 
