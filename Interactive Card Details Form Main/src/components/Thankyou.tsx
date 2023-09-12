@@ -24,11 +24,7 @@ const Thankyou = ({
   return (
     <div className="mt-24 lg:mt-0 px-6 text-center flex-[2.5_2_0%]">
       <div className="space-y-8">
-        <img
-          className="mx-auto"
-          src="../../public/images/icon-complete.svg"
-          alt=""
-        />
+        <img className="mx-auto" src="/images/icon-complete.svg" alt="" />
         <div className="space-y-2">
           <div className=" text-3xl uppercase tracking-widest text-Verydarkviolet">
             Thank You!
